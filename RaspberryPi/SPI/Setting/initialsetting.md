@@ -1,12 +1,13 @@
-**라즈베리 환경설정**
-1. vim editor 설치
-2. fcitx 한글 
+**라즈베리 환경설정 내용**
+-
+1. vim editor 설치  
+2. fcitx 한글 설치  
 
 
 
-sudo apt-get install -y vim
-sudo apt install -y fcitx fcitx-hangul
-
+>sudo apt-get install -y vim  
+>sudo apt install -y fcitx fcitx-hangul  
+>
 
 
 **환경설정 파일수정**
