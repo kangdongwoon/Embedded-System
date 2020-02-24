@@ -38,7 +38,7 @@
 > 
 > 
 > **Python 가상환경 접속**  
-> source env/bin/activate 
+> source env/bin/activate  
 > sudo apt-get install portaudio19-dev libffi-dev libssl-dev libmpg123-dev  
 > python -m pip install --upgrade google-assistant-library==1.0.0  
 > python -m pip install --upgrade google-assistant-sdk[samples]==0.5.1  
