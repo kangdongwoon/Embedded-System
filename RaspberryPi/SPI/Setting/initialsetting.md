@@ -1,5 +1,11 @@
-sudo apt-get install -y vim
+**라즈베리 환경설정**
+1. vim editor 설치
+2. fcitx 한글 
 
+
+
+sudo apt-get install -y vim
+sudo apt install -y fcitx fcitx-hangul
 
 
 
