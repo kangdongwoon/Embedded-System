@@ -40,9 +40,9 @@
 > **Python 가상환경 접속**  
 > source env/bin/activate  
 > sudo apt-get install -y portaudio19-dev libffi-dev libssl-dev libmpg123-dev  
-> python -m pip install -y --upgrade google-assistant-library==1.0.1  
-> python -m pip install -y --upgrade google-assistant-sdk[samples]==0.5.1  
-> python -m pip install -y --upgrade google-auth-oauthlib[tool]  
+> python -m pip install --upgrade google-assistant-library==1.0.1  
+> python -m pip install --upgrade google-assistant-sdk[samples]==0.5.1  
+> python -m pip install --upgrade google-auth-oauthlib[tool]  
 > google-oauthlib-tool --scope https://www.googleapis.com/auth/assistant-sdk-prototype \  
 > --scope https://www.googleapis.com/auth/gcm \  
 > --save --headless --client-secrets /home/pi/client_secret_~client-id~.json  
