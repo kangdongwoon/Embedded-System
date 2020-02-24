@@ -2,12 +2,28 @@
 -
 1. vim editor 설치  
 2. fcitx 한글 설치  
+3. python3 설치
 
 
 
 >sudo apt-get install -y vim  
 >sudo apt install -y fcitx fcitx-hangul  
->
+>sudo apt install -y libffi-dev libbz2-dev liblzma-dev \
+>libsqlite3-dev libncurses5-dev libgdbm-dev zlib1g-dev \
+>libreadline-dev libssl-dev tk-dev build-essential \
+>libncursesw5-dev libc6-dev openssl git
+>cd /home/pi
+>mkdir python_src
+>cd python_src
+>wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
+>tar xvf Python-3.7.0.tgz
+>cd Python-3.7.0
+>./configure
+>make -j 4
+>sudo make install
+>cd /home/pi/python_src
+>wget https://bootstrap.pypa.io/get-pip.py
+>sudo python3.7 ./get-pip.py 
 
 
 **환경설정 파일수정**
