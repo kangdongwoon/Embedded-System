@@ -19,7 +19,7 @@
 >tar xvf Python-3.7.0.tgz  
 >cd Python-3.7.0  
 >./configure  
->make 
+>make  
 >sudo make install  
 >cd /home/pi/python_src  
 >wget https://bootstrap.pypa.io/get-pip.py  
