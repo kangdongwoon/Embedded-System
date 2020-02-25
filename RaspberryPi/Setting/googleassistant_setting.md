@@ -56,6 +56,31 @@
 > 엔터를 입력할 때마다 반응
 > googlesamples-assistant-pushtotalk --project_id ~my-dev-project~ --device_model_id ~my-model~  
 
+**음성인식 Source**
+-
+> sudo apt-get update  
+> sudo apt-get install -y libportaudio0 libportaudio2 libportaudiocpp0 portaudio19-dev  
+> sudo apt-get install python-dev  
+> sudo pip install pyaudio  
+> 서비스 계정 키 생성하기  
+> export GOOGLE_APPLICATION_CREDENTIALS="/home/pi/~testspeech-e88f1e852859.json~"  
+> git clone https://github.com/GoogleCloudPlatform/python-docs-samples.git  
+> source env/bin/activate  
+> cd python-docs-samples/speech/cloud-client/  
+> pip install -r requirements.txt  
+>  
+> **예제코드**  
+> cd python-docs-samples/speech/cloud-client/  
+> python transcribe_streaming_mic.py  
+> - 영어문장을 인식하는 예제코드  
+> - 한글문장을 인식하려면 코드수정하기  
+> ~language_code = 'en-US'~  
+> language_code = 'ko-KR'  
+
+
+
+
+
 **참고자료**
 -
 > https://developers.google.com/assistant/sdk/guides/library/python/embed/config-dev-project-and-account  
@@ -64,8 +89,10 @@
 >
 > https://myaccount.google.com/activitycontrols  
 > - Web & App Activity, Device Information, Voice & Audio Activity 활성화  
+>
+> https://diy-project.tistory.com/91?category=742713
 
 **주의사항**
 -
 > Google API Console에서 신용카드 등록이 필요하다. 1년 무료  
-> 
+> 음성인식 프로그램 작동되는 시간 대략 65초정도이며 자동으로 정지된다.
