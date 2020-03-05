@@ -17,3 +17,9 @@
 > requirements.txt 파일 변경  
 > google-cloud-speech==~1.3.1~  
 > google-cloud-speech==0.26  
+>
+>-
+>**단축키설정**  
+> vim ~/.bashrc  
+> alias 변수=''
+> source ~/.bashrc  
