@@ -2,7 +2,8 @@
 -
 1. vim editor 설치  
 2. fcitx 한글 설치  
-3. python3 설치
+3. python3 설치  
+4. swap 메모리공간 확장  
 
 
 
@@ -24,6 +25,8 @@
 >cd /home/pi/python_src  
 >wget https://bootstrap.pypa.io/get-pip.py  
 >sudo python3.7 ./get-pip.py  
+
+  
   
 
 **환경설정 파일수정**
@@ -58,6 +61,16 @@ sudo vim /etc/vim/vimrc
 >IM_CONFIG_DEFAULT_MODE=fcitx  
 >
 >기본설정 - 입력기 - default로 설정 후 저장하고 Reboot  
+
+/etc/dphys-swapfile  
+>~CONF_SWAPSIZE=100~  
+>CONF_SWAPSIZE=1024  
+>  
+>sudo /etc/init.d/dphys-swapfile stop  
+>sudo /etc/init.d/dphys-swapfile start  
+
+
+
 
 
 
