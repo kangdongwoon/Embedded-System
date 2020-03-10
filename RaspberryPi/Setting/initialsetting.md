@@ -4,6 +4,7 @@
 2. fcitx 한글 설치  
 3. python3 설치  
 4. swap 메모리공간 확장  
+5. apt-get 저장소 변경  
 
 
 
@@ -25,6 +26,7 @@
 >cd /home/pi/python_src  
 >wget https://bootstrap.pypa.io/get-pip.py  
 >sudo python3.7 ./get-pip.py  
+
 
   
   
@@ -68,7 +70,10 @@ sudo vim /etc/vim/vimrc
 >  
 >sudo /etc/init.d/dphys-swapfile stop  
 >sudo /etc/init.d/dphys-swapfile start  
-
+  
+/etc/apt/sources.list
+>~deb http://raspbian.raspberrypi.org/raspbian/ buster main contrib non-free rpi~  
+>deb http://ftp.kaist.ac.kr/raspbian/raspbian/ buster main contrib non-free rpi  
 
 
 
