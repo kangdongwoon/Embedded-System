@@ -7,7 +7,7 @@
 5. apt-get 저장소 변경  
 
 
-
+>sudo apt-get update  
 >sudo apt-get install -y vim  
 >sudo apt install -y fcitx fcitx-hangul  
 >sudo apt install -y libffi-dev libbz2-dev liblzma-dev \  
@@ -26,7 +26,7 @@
 >cd /home/pi/python_src  
 >wget https://bootstrap.pypa.io/get-pip.py  
 >sudo python3.7 ./get-pip.py  
-
+>sudo apt-get install qt5-default qtbase5-dev qtdeclarative5-dev qt5-qmake qtcreator libqt5gui5  qtscript5-dev qtmultimedia5-dev libqt5multimedia5-plugins qtquickcontrols2-5-dev libqt5network5 cmake build-essential  
 
   
   
