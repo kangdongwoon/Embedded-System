@@ -5,7 +5,8 @@
 3. python3 설치  
 4. swap 메모리공간 확장  
 5. apt-get 저장소 변경  
-
+6. qtcreator 설치
+  
 
 >sudo apt-get update  
 >sudo apt-get install -y vim  
