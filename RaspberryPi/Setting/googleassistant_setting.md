@@ -100,10 +100,9 @@
 
 **오류해결**
 -
-> Expression 'alsa_snd_pcm_hw_params_set_period_size_near( pcm, hwParams, &alsaPeriodFrames, &dir )' failed in  
-> 'src/hostapi/alsa/pa_linux_alsa.c', line: 924  
-> .asoundrc를 사용하여 alsa 샘플속도 변환
-  
+Expression 'alsa_snd_pcm_hw_params_set_period_size_near( pcm, hwParams, &alsaPeriodFrames, &dir )' failed in  
+'src/hostapi/alsa/pa_linux_alsa.c', line: 924  
+> .asoundrc를 사용하여 alsa 샘플속도 변환  
 ``` 
 pcm.convert{  
     type plug;
