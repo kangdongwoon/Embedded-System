@@ -95,13 +95,15 @@
 **주의사항**
 -
 > Google API Console에서 신용카드 등록이 필요하다. 1년 무료  
-> 음성인식 프로그램 작동되는 시간 대략 65초정도이며 자동으로 정지된다.
+> 음성인식 프로그램 작동되는 시간 대략 65초정도이며 자동으로 정지된다.  
+  
 
 **오류해결**
 -
->Expression 'alsa_snd_pcm_hw_params_set_period_size_near( pcm, hwParams, &alsaPeriodFrames, &dir )' failed in   >'src/hostapi/alsa/pa_linux_alsa.c', line: 924  
->  
->.asoundrc를 사용하여 alsa 샘플속도 변환
+> Expression 'alsa_snd_pcm_hw_params_set_period_size_near( pcm, hwParams, &alsaPeriodFrames, &dir )' failed in  
+> 'src/hostapi/alsa/pa_linux_alsa.c', line: 924  
+> .asoundrc를 사용하여 alsa 샘플속도 변환
+  
 ``` 
 pcm.convert{  
     type plug;
