@@ -11,7 +11,8 @@
 > reboot  
 > pip install --upgrade google-cloud-speech  
 > pip install google-cloud-storage  
-> export GOOGLE_APPLICATION_CREDENTIALS="/home/pi/[FILE_NAME].json"  
+> export GOOGLE_APPLICATION_CREDENTIALS=/home/pi/[FILE_NAME].json  
+> **진심진심 경로에 "" 이나 '' 따위 붙이지 말 것(20.03.17 오류 해결)**  
 > 혹은 vim /etc/bash.bashrc에서 맨 밑에 추가해준다.(영구적)  
 > Python 클라이언트 라이브러리 버전을 바꿔줘야한다!  
 > requirements.txt 파일 변경  
