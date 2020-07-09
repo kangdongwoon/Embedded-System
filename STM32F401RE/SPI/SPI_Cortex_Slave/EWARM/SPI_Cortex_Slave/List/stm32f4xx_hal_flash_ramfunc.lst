@@ -1,0 +1,237 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.10.3.6832/W32 for ARM        19/Mar/2020  00:44:32
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\CubeMX_Project\STM32Cube_FW_F4_V1.19.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c
+#    Command line =  
+#        C:\CubeMX_Project\STM32Cube_FW_F4_V1.19.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c
+#        -D USE_HAL_DRIVER -D STM32F401xE -lC
+#        C:\CubeMX_Project\SPI_Cortex_Slave\EWARM\SPI_Cortex_Slave/List\
+#        --diag_suppress Pa050 -o
+#        C:\CubeMX_Project\SPI_Cortex_Slave\EWARM\SPI_Cortex_Slave/Obj\ --debug
+#        --endian=little --cpu=Cortex-M4F -e --fpu=VFPv4_sp --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Full.h" -I
+#        C:\CubeMX_Project\SPI_Cortex_Slave\Inc\ -I
+#        C:/CubeMX_Project/STM32Cube_FW_F4_V1.19.0/Drivers/STM32F4xx_HAL_Driver/Inc\
+#        -I
+#        C:/CubeMX_Project/STM32Cube_FW_F4_V1.19.0/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy\
+#        -I
+#        C:/CubeMX_Project/STM32Cube_FW_F4_V1.19.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include\
+#        -I C:/CubeMX_Project/STM32Cube_FW_F4_V1.19.0/Drivers/CMSIS/Include\ -I
+#        C:\CubeMX_Project\SPI_Cortex_Slave\Debug\Drivers\u8glib_arm_v1.18.1\src\
+#        -I C:\CubeMX_Project\SPI_Cortex_Slave\EWARM/../Inc\ -Ohz -I
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\CubeMX_Project\SPI_Cortex_Slave\EWARM\SPI_Cortex_Slave/List\stm32f4xx_hal_flash_ramfunc.lst
+#    Object file  =  
+#        C:\CubeMX_Project\SPI_Cortex_Slave\EWARM\SPI_Cortex_Slave/Obj\stm32f4xx_hal_flash_ramfunc.o
+#
+###############################################################################
+
+C:\CubeMX_Project\STM32Cube_FW_F4_V1.19.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c
+      1          /**
+      2            ******************************************************************************
+      3            * @file    stm32f4xx_hal_flash_ramfunc.c
+      4            * @author  MCD Application Team
+      5            * @brief   FLASH RAMFUNC module driver.
+      6            *          This file provides a FLASH firmware functions which should be 
+      7            *          executed from internal SRAM
+      8            *            + Stop/Start the flash interface while System Run
+      9            *            + Enable/Disable the flash sleep while System Run
+     10            @verbatim
+     11            ==============================================================================
+     12                              ##### APIs executed from Internal RAM #####
+     13            ==============================================================================
+     14            [..]
+     15              *** ARM Compiler ***
+     16              --------------------
+     17              [..] RAM functions are defined using the toolchain options. 
+     18                   Functions that are be executed in RAM should reside in a separate
+     19                   source module. Using the 'Options for File' dialog you can simply change
+     20                   the 'Code / Const' area of a module to a memory space in physical RAM.
+     21                   Available memory areas are declared in the 'Target' tab of the 
+     22                   Options for Target' dialog.
+     23          
+     24              *** ICCARM Compiler ***
+     25              -----------------------
+     26              [..] RAM functions are defined using a specific toolchain keyword "__ramfunc".
+     27          
+     28              *** GNU Compiler ***
+     29              --------------------
+     30              [..] RAM functions are defined using a specific toolchain attribute
+     31                   "__attribute__((section(".RamFunc")))".
+     32            
+     33            @endverbatim         
+     34            ******************************************************************************
+     35            * @attention
+     36            *
+     37            * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>
+     38            *
+     39            * Redistribution and use in source and binary forms, with or without modification,
+     40            * are permitted provided that the following conditions are met:
+     41            *   1. Redistributions of source code must retain the above copyright notice,
+     42            *      this list of conditions and the following disclaimer.
+     43            *   2. Redistributions in binary form must reproduce the above copyright notice,
+     44            *      this list of conditions and the following disclaimer in the documentation
+     45            *      and/or other materials provided with the distribution.
+     46            *   3. Neither the name of STMicroelectronics nor the names of its contributors
+     47            *      may be used to endorse or promote products derived from this software
+     48            *      without specific prior written permission.
+     49            *
+     50            * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+     51            * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+     52            * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+     53            * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+     54            * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+     55            * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+     56            * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+     57            * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+     58            * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+     59            * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     60            *
+     61            ******************************************************************************
+     62            */ 
+     63          
+     64          /* Includes ------------------------------------------------------------------*/
+     65          #include "stm32f4xx_hal.h"
+     66          
+     67          /** @addtogroup STM32F4xx_HAL_Driver
+     68            * @{
+     69            */
+     70          
+     71          /** @defgroup FLASH_RAMFUNC FLASH RAMFUNC
+     72            * @brief FLASH functions executed from RAM
+     73            * @{
+     74            */
+     75          #ifdef HAL_FLASH_MODULE_ENABLED
+     76          #if defined(STM32F410Tx) || defined(STM32F410Cx) || defined(STM32F410Rx) || defined(STM32F411xE) || defined(STM32F446xx) || defined(STM32F412Zx) || defined(STM32F412Vx) || \
+     77              defined(STM32F412Rx) || defined(STM32F412Cx)
+     78          
+     79          /* Private typedef -----------------------------------------------------------*/
+     80          /* Private define ------------------------------------------------------------*/
+     81          /* Private macro -------------------------------------------------------------*/
+     82          /* Private variables ---------------------------------------------------------*/
+     83          /* Private function prototypes -----------------------------------------------*/
+     84          /* Exported functions --------------------------------------------------------*/
+     85          /** @defgroup FLASH_RAMFUNC_Exported_Functions FLASH RAMFUNC Exported Functions
+     86            * @{
+     87            */
+     88          
+     89          /** @defgroup FLASH_RAMFUNC_Exported_Functions_Group1 Peripheral features functions executed from internal RAM 
+     90            *  @brief Peripheral Extended features functions 
+     91            *
+     92          @verbatim   
+     93          
+     94           ===============================================================================
+     95                                ##### ramfunc functions #####
+     96           ===============================================================================  
+     97              [..]
+     98              This subsection provides a set of functions that should be executed from RAM 
+     99              transfers.
+    100              
+    101          @endverbatim
+    102            * @{
+    103            */
+    104          
+    105          /**
+    106            * @brief Stop the flash interface while System Run
+    107            * @note  This mode is only available for STM32F41xxx/STM32F446xx devices. 
+    108            * @note  This mode couldn't be set while executing with the flash itself. 
+    109            *        It should be done with specific routine executed from RAM.     
+    110            * @retval None
+    111            */
+    112          __RAM_FUNC HAL_FLASHEx_StopFlashInterfaceClk(void)
+    113          {
+    114            /* Enable Power ctrl clock */
+    115            __HAL_RCC_PWR_CLK_ENABLE();
+    116            /* Stop the flash interface while System Run */  
+    117            SET_BIT(PWR->CR, PWR_CR_FISSR);
+    118             
+    119            return HAL_OK;
+    120          }
+    121          
+    122          /**
+    123            * @brief Start the flash interface while System Run
+    124            * @note  This mode is only available for STM32F411xx/STM32F446xx devices. 
+    125            * @note  This mode couldn't be set while executing with the flash itself. 
+    126            *        It should be done with specific routine executed from RAM.     
+    127            * @retval None
+    128            */
+    129          __RAM_FUNC HAL_FLASHEx_StartFlashInterfaceClk(void)
+    130          {
+    131            /* Enable Power ctrl clock */
+    132            __HAL_RCC_PWR_CLK_ENABLE();
+    133            /* Start the flash interface while System Run */
+    134            CLEAR_BIT(PWR->CR, PWR_CR_FISSR);
+    135          
+    136            return HAL_OK;
+    137          }
+    138          
+    139          /**
+    140            * @brief Enable the flash sleep while System Run
+    141            * @note  This mode is only available for STM32F41xxx/STM32F446xx devices. 
+    142            * @note  This mode could n't be set while executing with the flash itself. 
+    143            *        It should be done with specific routine executed from RAM.     
+    144            * @retval None
+    145            */
+    146          __RAM_FUNC HAL_FLASHEx_EnableFlashSleepMode(void)
+    147          {
+    148            /* Enable Power ctrl clock */
+    149            __HAL_RCC_PWR_CLK_ENABLE();
+    150            /* Enable the flash sleep while System Run */
+    151            SET_BIT(PWR->CR, PWR_CR_FMSSR);
+    152          
+    153            return HAL_OK;
+    154          }
+    155          
+    156          /**
+    157            * @brief Disable the flash sleep while System Run
+    158            * @note  This mode is only available for STM32F41xxx/STM32F446xx devices. 
+    159            * @note  This mode couldn't be set while executing with the flash itself. 
+    160            *        It should be done with specific routine executed from RAM.     
+    161            * @retval None
+    162            */
+    163          __RAM_FUNC HAL_FLASHEx_DisableFlashSleepMode(void)
+    164          {
+    165            /* Enable Power ctrl clock */
+    166            __HAL_RCC_PWR_CLK_ENABLE();
+    167            /* Disable the flash sleep while System Run */
+    168            CLEAR_BIT(PWR->CR, PWR_CR_FMSSR);
+    169            
+    170            return HAL_OK;
+    171          }
+    172          
+    173          /**
+    174            * @}
+    175            */
+    176          
+    177          /**
+    178            * @}
+    179            */
+    180          
+    181          #endif /* STM32F410xx || STM32F411xE || STM32F446xx || STM32F412Zx || STM32F412Vx || STM32F412Rx || STM32F412Cx */
+    182          #endif /* HAL_FLASH_MODULE_ENABLED */
+    183          /**
+    184            * @}
+    185            */
+    186          
+    187          /**
+    188            * @}
+    189            */
+    190          
+    191          /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

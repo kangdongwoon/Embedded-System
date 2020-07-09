@@ -1,0 +1,53 @@
+Configuration	SPI_Cortex_Slave
+STM32CubeMX 	4.24.0
+Date	03/14/2020
+MCU	STM32F401RETx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+SPI1	Full-Duplex Slave	SPI1_MISO	PA6
+SPI1	Full-Duplex Slave	SPI1_MOSI	PA7
+SPI1	Full-Duplex Slave	SPI1_SCK	PA5
+SPI1	Hardware NSS Input Signal	SPI1_NSS	PA4
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+USART6	Asynchronous	USART6_RX	PC7
+USART6	Asynchronous	USART6_TX	PC6
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+20	PA4	SPI1_NSS	
+21	PA5	SPI1_SCK	
+22	PA6	SPI1_MISO	
+23	PA7	SPI1_MOSI	
+37	PC6	USART6_TX	
+38	PC7	USART6_RX	
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : SPI_Cortex_Slave
+Project Folder : C:\CubeMX_Project\SPI_Cortex_Slave
+Toolchain / IDE : EWARM
+Firmware Package Name and Version : STM32Cube FW_F4 V1.19.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : Balanced Size/Speed
+
+
+
+
+
+
