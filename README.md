@@ -1,6 +1,6 @@
 # Embedded-System Learning
   
-## Using Board List
+## Using Board Pinmap
 1. Atmega128  
 <img src="https://user-images.githubusercontent.com/52377778/86985352-0899ae80-c1cc-11ea-8159-56aa19196f73.png" width="400" height="400" />  
 2. Raspberry Pi  
